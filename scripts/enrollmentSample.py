@@ -13,6 +13,7 @@ from SystemConfiguration import SCDynamicStoreCopyConsoleUser
 import urllib2
 import base64
 import sys
+import json
 
 # Get the logged in user
 loggedInUser = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]
