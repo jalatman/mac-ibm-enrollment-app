@@ -33,6 +33,9 @@ jss_url = sys.argv[4]
 jss_api_user = sys.argv[5]
 jss_api_passwd = sys.argv[6]
 
+# In the event that there is a trailing slash as part of the URL, remove it.
+jss_url = jss_url.rstrip('/')
+
 sub_command = "system_profiler SPHardwareDataType | grep UUID | awk '" " { print $NF }'"
 result = subprocess.Popen(sub_command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 UDID = result.communicate()[0]
