@@ -20,7 +20,7 @@ loggedInUser = (SCDynamicStoreCopyConsoleUser(None, None, None) or [None])[0]
 loggedInUser = [loggedInUser,""][loggedInUser in [u"loginwindow", None, u""]]
 
 print "logged in user is: %s" % loggedInUser
-fileUserPath="/Users/%s/Library/Preferences/com.ibm.enrollment.plist." % loggedInUser
+fileUserPath="/Users/%s/Library/Preferences/com.ibm.enrollment.plist" % loggedInUser
 
 # Setup for enrollment
 if os.path.exists(fileUserPath):
